@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>mpa in javascript</h1>
+</body>
+<script>
+    let mymap=new Map();
+    let key1='nikhil';
+    let key2={
+        name:'nikhil',
+        standand:4
+    }
+    let key3=function print(){
+        console.log('nikhil');
+    }
+    mymap.set(key1,'this is data type');
+    mymap.set(key2,'this is object');
+    mymap.set(key3,'this is function' );
+    // console.log(mymap);
+    // let value=mymap.get(key1)
+    // console.log(value);
+    // console.log(mymap.size);
+    // let arr=Array.from(mymap);
+    // arr.forEach((key,value)=>{
+    //     console.log('key is',key);
+    //     console.log('value is', value);
+    // })
+    // for(let[key,value] of mymap){
+    //     console.log(key,value);
+    // }
+    for(let key of mymap.keys()){
+        console.log(key);
+    }
+</script>
+</html>

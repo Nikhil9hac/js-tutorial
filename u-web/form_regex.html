@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div id="message">
+
+    </div>
+    <!-- <div class="alert alert-success" role="alert" id="message"> -->
+    <!-- </div> -->
+    <div class="container target">
+        <h2 class="heading my-3">
+            Dragon Travel Desk
+        </h1>
+        <form>
+            <div class="mb-3">
+                <label for="exampleInputNmae" class="form-label">User name</label>
+                <input type="text" class="form-control" id="Name" aria-describedby="nameHelp">
+              </div>
+              <div class="mb-3">
+                <label for="Number" class="form-label">Phone number</label>
+                <input type="tel" class="form-control" id="Number" aria-describedby="carHelp">
+              </div>
+            <div class="mb-3">
+              <label for="Email1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="Email" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="Password1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="Password1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputCar" class="form-label">Enter your preferred Car</label>
+                <input type="text" class="form-control" id="exampleInputCar" aria-describedby="carHelp">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Any Other Message</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+            <button type="submit" class="btn btn-primary" id="myBtn">Submit</button>
+          </form>
+    </div>
+
+    
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper.js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
+  </body>
+  <script>
+    let isValidName=false;
+    let isValidEmail=false;
+    let isValidNumber=false;
+    let isValidPassword=false;
+
+    let userName=document.getElementById('Name');
+    userName.addEventListener('blur',e=>{
+      let regex=/[a-z][A-z][0-9]/i;
+      let str=document.getElementById('Name').value;
+      console.log(str);
+      if (regex.test(str)==true) {
+        isValidName=true;
+        console.log(true);
+      }
+      else{
+        isValidName=false
+      }
+    })
+    let phone=document.getElementById('Number');
+    phone.addEventListener('blur',e=>{
+      let regex=/[0-9]{10}/
+      let number=phone.value;
+      if (regex.test(number)) {
+        isValidNumber=true;
+        console.log(true);
+        
+      } else {
+        isValidNumber=false;
+        console.log(false);
+      }
+        })
+    
+    let gmail=document.getElementById('Email');
+    gmail.addEventListener('blur',e=>{
+      let regex=/^([_\-\.a-z0-9]+){5,50}@gmail.com/i;
+      let email=gmail.value
+      if (regex.test(email)) {
+        isValidEmail=true;
+        console.log(true);
+      } else {
+        isValidEmail=false;
+      }
+    })
+
+    let password=document.getElementById('Password1');
+    password.addEventListener('blur',e=>{
+      let regex=/([a-z]){2,8}(0-9){0,5}[@#$%&]?/i;
+      pass=password.value;
+      if (regex.test(pass)) {
+        isValidPassword=true;
+      } else {
+        isValidPassword=false;
+      }
+    })
+
+    let btn=document.getElementById('myBtn');
+    btn.addEventListener('click',e=>{
+      e.preventDefault();
+      if (isValidEmail && isValidName && isValidNumber && isValidPassword) {
+        displayShow('success','Form has been submitted')
+      } else {
+        displayShow('danger','Sorry please re-check your form and fill correctly');
+      }
+      e.preventDefault();
+    })
+function displayShow(col,mess){
+  let message=document.getElementById('message');
+  message.innerHTML=`<div class="alert alert-${col} alert-dismissible fade show" role="alert" >
+       <strong>Message</strong> ${mess}
+       <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="border: none;
+    float: right;
+    border-radius: 2rem;
+    background-color: #99e8c4;">
+         <span aria-hidden="true">&times;</span>
+       </button>
+     </div>
+`;
+setTimeout(() => {
+  message.innerHTML=""
+}, 3000);
+// setInterval(() => {
+//   message.innerHTML='';
+// }, 3000);
+}
+  </script>
+  </script>
+</html>

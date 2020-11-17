@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: aqua;
+        }
+        .myele{
+            width:154px; 
+            border:2px solid black;
+            margin: 34px;
+            padding:23px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"><h1>
+            Welcome to Ediatble div
+        </h1>
+        <div class="myfirst">child
+            <ul>
+                <li>child 1</li>
+                <li>child 2</li>
+                <li>child 3</li>
+                <li>child 4</li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    console.log('this is editable div');
+    let first=document.querySelector('.myfirst')
+    let divelm=document.createElement('div');
+    let container=document.querySelector('.container');
+    let text;
+    let val=localStorage.getItem('text')
+    if (val==null) {
+        text=document.createTextNode('i am editable div. click me to edit')
+    } else {
+        text=document.createTextNode(val)
+    }
+    text='i am editable div. click me to edit'
+    divelm.setAttribute('id','ele');
+    divelm.setAttribute('class','myele');
+    // divelm.setAttribute('style', 'width:154px; border:2px solid black; margin 34px; padding:23px;');
+    // divElem.setAttribute('style', 'border:2px solid black; width: 154px; margin: 34px; padding:23px;');
+    container.insertBefore(divelm,first)
+    divelm.append(text)
+    console.log(ele.innerHTML)
+    divelm.addEventListener('click',func1);
+    function func1(){
+        let notextarea=document.getElementsByClassName('textarea').length
+        if (notextarea==0) {
+            let html=ele.innerHTML;
+            divelm.innerHTML=`<textarea class="textarea form-control" id="textarea" rows="3">${html}</textarea>`
+        }
+        let textarea=document.getElementById('textarea')
+        textarea.addEventListener('blur',function(){
+            ele.innerHTML=textarea.value;
+            localStorage.setItem('text',textarea.value);
+        })
+    }
+</script>
+</html>

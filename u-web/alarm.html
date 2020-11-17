@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+
+    <title>Alarm Clock</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        #header{
+            width: 100vw;
+            height: 100vh;
+        }
+        .img img{
+            height: 18rem;
+            margin-top: 3rem;
+            margin-left: 5rem;
+        }
+        html{
+            font-size: 62.5%;
+        }
+        .mypara{
+            height: 9.8vh;
+            font-size: 3rem;
+        }
+        .mypara2{
+            
+            font-size: 3rem;
+            font-weight: 500;
+            margin-left: 5.7rem;
+        }
+       .btn{
+        width: 10rem;
+        height: 5rem;
+        color: black;
+        font-size: 2rem;
+        font-size: bold;
+        font-weight: 500;
+       }
+       .btn-group{
+           display: grid;
+            grid-template-rows: 6rem 1rem;
+            grid-template-columns: 13rem 12rem 10rem;
+
+       }
+       .container1{
+           display: flex;
+       }
+       .breadcrumb{
+        width: 67rem;
+        height: 22rem;
+        font-size: 3rem;
+        display: flex;
+        position: absolute;
+        right: 4rem;
+       }
+       .bread{
+        width: 37%;
+        margin-top: 7rem;
+       }
+       #time{
+           margin-top: 7rem;
+       }
+       .inputype{
+        position: absolute;
+        right: 11rem;
+        width: 38rem;
+        top: 42rem;
+       }
+    
+    .form-control{
+        font-size: 1.3rem;
+    }
+
+    </style>
+  </head>
+  <body>
+<div id="header">
+    <div id="message"></div>
+   <div class="top">
+       <p class="mypara text-light bg-dark px-3 py-2" id="test"> Alarm.com</p>
+   </div>
+   <div class="container1">
+<div class="img" style="width: 45rem;">
+    <img src="alarm.png" alt="" srcset="">
+</div>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <p class="bread">The Current Time: <div id="time"></div></p>
+    </ol>
+</nav>
+</div>
+<div class="bottom_of_img">
+      <p class="mypara2 my-5">Set an Alarm</p>
+      <div class="twoside">
+      <div class="btn-group mx-2" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off"> 
+        <label class="btn btn-outline-primary target" for="btnradio1">1m</label>
+      
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+        <label class="btn btn-outline-primary target" for="btnradio2">5m</label>
+      
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+        <label class="btn btn-outline-primary target" for="btnradio3">10m</label>
+       
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off" >
+        <label class="btn btn-outline-primary target" for="btnradio4">15m</label>
+      
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
+        <label class="btn btn-outline-primary target" for="btnradio5">30m</label>
+      
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio6" autocomplete="off">
+        <label class="btn btn-outline-primary target" for="btnradio6">60m</label>
+</div>
+<div class="inputype">
+    <div class="input-group mb-3">
+        <input type="number" class="form-control" placeholder="AlarmTime" id="txt">
+        <button type="button" class="btn btn-info text-light mx-2 " id="btnh" style="width: 8rem; height: 4rem;font-size: 1.3rem; margin-top: 2px;">SET</button>
+      </div> 
+</div>
+</div>
+</div>
+
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
+
+  </body>
+  <script>
+      function updatetime(){
+          let time=new Date();
+          let target=`${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`
+          let time2=document.getElementById('time');
+          time2.innerHTML=target;
+      }
+      setInterval(() => {
+        updatetime();
+      }, 1000);
+        let interval=0;
+        let txt=document.getElementById('txt')
+      btnradio1=document.getElementById('btnradio1');
+        btnradio1.addEventListener('click',()=>{
+            interval=interval+1;
+            txt.innerHTML="";
+            txt.value=interval;
+            txt.innerHTML=txt.value;
+        })
+
+        btnradio2=document.getElementById('btnradio2');
+        btnradio2.addEventListener('click',()=>{
+            interval=interval+5;
+            txt.innerHTML="";
+            txt.value=interval;
+            txt.innerHTML=txt.value;
+        })
+        btnradio3=document.getElementById('btnradio3');
+        btnradio3.addEventListener('click',()=>{
+            interval=interval+10;
+            txt.innerHTHTML="";
+            txt.value=interval;
+            txt.innerHTML=txt.value;
+
+        })
+        btnradio4=document.getElementById('btnradio4');
+        btnradio4.addEventListener('click',()=>{
+            interval=interval+15;
+            txt.innerHTML="";
+            txt.value=interval;
+            txt.innerHTML=txt.value;
+        })
+        btnradio5=document.getElementById('btnradio5');
+        btnradio5.addEventListener('click',()=>{
+            interval=interval+30;
+            txt.innerHTML="";
+            txt.value=interval;
+            txt.innerHTML=txt.value;
+        })
+        btnradio6=document.getElementById('btnradio6');
+        btnradio6.addEventListener('click',()=>{
+            interval=interval+60; 
+            txt.innerHTML="";
+            txt.value=interval;
+            txt.innerHTML=txt.value;
+        })
+     
+        let play=document.getElementById('btnh');
+        btnh.addEventListener('click',()=>{
+            jump=parseInt(txt.value)*1000*60;
+            console.log(jump);
+            if (jump>0) {
+            setTimeout(() => {
+            // playsound();
+            window.open('dismiss.html')
+        }, jump);  
+        }
+        })
+
+       
+     
+
+        
+        
+  </script>
+</html>

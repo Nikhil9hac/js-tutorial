@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Lovecalc</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            /* background: url('love.jpg'); */
+        }
+        body{
+          background: url('love.jpg') no-repeat center center/cover;
+          height: 100vh;
+        }
+       .container-fluid{
+        
+          height: 40px;
+          display: flex;
+          align-items: center;
+          letter-spacing: px;
+          justify-content: center;
+          width: 52vw;
+          margin-left: -15px;
+          /* width: 104%; */
+          font-size: 17px;
+          font-weight: 900;
+
+
+       }
+       .container{
+         width: 52vw;
+         background-color: white;
+         position: relative;
+         top: 128px;
+        border: 2px solid white;
+       }
+       .userName{
+          height: 42px;
+          text-align: center;
+          width: 195px;
+          margin: 10px;
+          font-weight: bold;
+       }
+       #name{
+         margin-left: 21%;
+       }
+       .btn{
+        width: 14vw;
+       font-weight: bold;
+      letter-spacing: 1.5px;
+      border-radius: 7px;
+      margin-top: 5px;
+      margin-left: 237px;
+
+       }
+       .form-control{
+         
+        width: 12vw;
+        border-radius: 8px;
+        margin-left: 37%;
+        margin-top: 20px;
+
+       }
+       .card-body{
+         
+        height: 49px;
+        background-color: #e0d6d5;
+        padding-top: 14px;
+        font-weight: 600;
+        /* width: 51vw; */
+        width: 709px;
+        margin-left: -17px;
+
+       }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-fluid bg-danger text-center text-light">
+        Love calculator 
+      </div>
+      <form>
+        <div class="form1">
+          <input type="text" name="" id="name" class='userName' placeholder="Your name">
+          <span id="plus">+</span>
+          <input type="text" name="" id="love" class="userName" placeholder="Love name">
+        </div>
+      </form>
+      <button type="submit" class="btn btn-success " id="mybtn">Click</button>
+      <div class="form-group">
+        <input type="email" class="form-control text-center" id="loveMea" placeholder="Love Percentage">
+      </div>
+      <div class="card">
+        <div class="card-body text-center">
+          God Bless Your Relationship
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+  <script src="lovec.js"></script>
+</html>

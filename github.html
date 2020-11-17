@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github.com</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 62.5%;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            /* font-size: 67.5%; */
+            justify-content: center;
+        }
+        .box{
+            width: 23vw;
+            height: 50vh;
+            border-radius: 2.1rem;
+            background-color: #f05033;
+            position: relative;
+            transform: rotate(45deg);
+        }
+        .line1::before{
+            content: " ";
+            position: absolute;
+            left: 5.5rem;
+            top: -1.5rem;
+            width: 6rem;
+            border-radius: 50%;
+            height: 6rem;
+            background-color: white;
+        }
+        .line1::after{
+            content: " ";
+            position: absolute;
+            right: -2rem;
+            width: 6rem;
+            top: -1.5rem;
+            border-radius: 50%;
+            height: 6rem;
+            background-color: white;
+        }
+        .line1{
+            position: absolute;
+            width:16vw;
+            height: 4vh;
+            top: 6rem;
+            background-color: #fff;
+        }
+        .line2{
+            position: absolute;
+            width: 14vw;
+            transform: rotate(46.4deg);
+            height: 4vh;
+            right: 5rem;
+            top: 15rem;
+            background-color: #fff;
+        }
+        .line2::after{
+            content: " ";
+            position: absolute;
+            right: -1rem;
+            width: 6rem;
+            top: -1.9rem;
+            border-radius: 50%;
+            height: 6rem;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="line1"></div>
+            <div class="line2"></div>
+        </div>
+    </div>
+</body>
+</html>

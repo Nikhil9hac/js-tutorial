@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        today in this website we will learn fetch api
+    </h1>
+</body>
+<script>
+    function getdata(){
+        url='nikhil2.txt';
+        fetch(url).then((response=>response.text())).then((data=>console.log(data)))
+    }
+    // function getData(){
+//     console.log("Started getData")
+//     url = "harry.txt";
+//     fetch(url).then((response)=>{
+//         console.log("Inside first then")
+//         return response.text();
+//     }).then((data)=>{
+//         console.log("Inside second then")
+//         console.log(data);
+//     })
+// }
+// function getgit(){
+//     url='https://api.github.com/users';
+//     fetch(url).then((response)=>response.json())
+//     .then((data=>console.log(data)))
+// }
+//     getgit();
+// const xhr=new XMLHttpRequest();
+// xhr.open('GET','https://api.github.com/users',true);
+// xhr.onload=function(){
+//     // let json=JSON.parse(this.responseText)
+//     // console.log(json)
+//     console.log(this.responseText)
+// }
+// xhr.send()
+
+function post(){
+    url="http://dummy.restapiexample.com/api/v1/create";
+    data={
+        name:'nikhil7465578',
+        salary:"63543",
+        age:'33'
+    }
+    param={
+        method:'post',
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body:JSON.stringify(data)
+    }
+    fetch(url,param).then((response=>response))
+    .then((data=> console.log(data)))
+}
+post();
+
+// const xhr=new XMLHttpRequest();
+// xhr.open('POST','http://dummy.restapiexample.com/api/v1/create',true);
+// xhr.getResponseHeader('Content-Type','application/json')
+// params={
+//         name:'nikhil7465578',
+//         salary:"63543",
+//         age:'33'
+//     }
+// xhr.send(params)
+</script>
+</html>

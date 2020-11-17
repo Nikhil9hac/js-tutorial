@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid system</title>
+    <style>
+    *{
+        margin:0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    main{
+        width: 75%;
+        color: white;
+        display: grid;
+        border: 2px grey solid;
+        margin: 50px auto;
+        grid-gap: 20px;
+        grid-template-rows: 87px 127px 200px 127px ;
+        grid-template-columns: repeat(3,1fr) 157px ;
+        text-align: center;
+    }
+    .div1{
+        background-color: rgb(241, 96, 96);
+        grid-column: 1/-1;
+    }
+    .div2{
+        background-color: rgb(92, 250, 92);
+    }
+    .div3{
+        background-color: rgb(78, 78, 243);
+    }
+    .div4{
+        background-color: rgb(224, 79, 224);
+    }
+    .div5{
+        background-color: black;
+        grid-row-start: 2;
+        grid-row-end: 4;
+        grid-column: 4/5;
+    }
+    .div6{
+        background-color: rgb(240, 240, 69);
+        grid-column: 1/4;
+    }
+    .div7{
+        background-color:rgb(150, 220, 248);
+        grid-column: 1/-1;
+    }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="div1">Header</div>
+        <div class="div2">box1</div>
+        <div class="div3">box2</div>
+        <div class="div4">box3</div>
+        <div class="div5">sidebar</div>
+        <div class="div6">section</div>
+        <div class="div7">footer</div>
+    </main>
+</body>
+</html>

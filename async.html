@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Async And Await</h1>
+</body>
+<script>
+    // console.log("nikhil");
+    async function harry(){
+        console.log('inside the function');
+        const response= await fetch('https://api.github.com/users');
+        console.log('response loaded');
+        const user=await response.json()
+        console.log('data is loaded');
+        return user
+    }
+    let a=harry()
+    console.log('before harry')
+    harry();
+    console.log('after function');
+    console.log(a)
+    a.then(data=> console.log(data))
+    console.log('last ine of js file')
+
+</script>
+</html>

@@ -1,0 +1,12 @@
+body{
+    width: 1200px;
+}
+header > .container::before{
+    width: 1200px;
+}
+body> section::before{
+    width: 1200px;
+}
+body> footer::before{
+    width: 1200px;
+}

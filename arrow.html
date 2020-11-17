@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow function</title>
+</head>
+<body>
+    <h1>
+        Arrow function
+    </h1>
+</body>
+<script >
+    // normal function
+    // function nikhil(){
+    //     console.log('nikhil is learning javascript')
+    // }
+
+    //arrow function
+    const nikhil=()=> "I am learning javascript" 
+    console.log(nikhil());
+    const obj=()=>({name:"nihil"})
+    console.log(obj())
+    const output=(name,programmer)=>`${name} is leaning ${programmer}`
+    console.log(output('nikhil','javascipt'));
+    const input=(name)=>`my name is ${name}`
+    console.log(input('nikhil'))
+   let arra=['nikhil','tullu','anaya','dobu']
+   arra.forEach((element,index) => {
+       console.log(`${index+1} ${element}`)
+   });
+
+</script>
+</html>

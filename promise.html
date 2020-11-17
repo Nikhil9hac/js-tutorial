@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="conatiner">
+        <h1>
+            Student list
+        </h1>
+            <ul id="list1">
+            </ul>
+    </div>
+</body>
+<script>
+    const students=[
+        {name:'Nikhil',subject:'A.I'},
+        {name:'shubham',subject:'Maths'}
+    ]
+    function func1(student){
+        return new Promise(function(resolve,reject){
+            const error=false;
+            setTimeout(() => {
+                students.push(student)
+                if (!error) {
+                    console.log('promise resoved')
+                    resolve();
+                } else {
+                    reject();
+                }
+            }, 5000);
+        })
+    }
+function getstudent(){
+    setTimeout(() => {
+        let str='';
+        students.forEach(function(student){
+            str+=`<li>${student.name}</li>`
+        });
+        document.getElementById('list1').innerHTML=str;
+    }, 3000);
+}
+let new1={name:"Sunny", subject:"Python"};
+func1(new1).then(getstudent).catch(function(){
+    console.log('sorry we cannot fullfied your form')
+})
+</script>
+</html>

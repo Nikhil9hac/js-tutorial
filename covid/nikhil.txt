@@ -1,0 +1,41 @@
+    <div class="nav">
+        <p class="mypara bg-dark text-light text-center"> <u class="ul"> Corna-Live</u></p>
+    </div>
+   <div class="container-fluid">
+    <div class="left">
+        <div class="jumbotron bg-dark text-light">
+            <h2 class="display-5">Stay home stay safe</h2>
+            <p class="lead">This Website give you the live Infornmation about covid and  cases tell you how much get infected recoverd and many other stuff from the cornavirus.</p>
+            <hr class="my-4">
+            <p class="secondpara">Scroll down and See you state Infornmation.</p>
+          </div>
+    </div>
+    <div class="right">
+        <img src="covidpic.png" alt="" srcset="">
+    </div>
+   </div>
+
+
+   <div class="container-fluid result">
+    <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col" >State</th>
+            <th scope="col">Confirmed</th>
+            <th scope="col">Active</th>
+            <th scope="col">Deaths</th>
+            <th scope="col" >Recovered</th>
+            <th scope="col">Lastupdate</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody" class="table text-light">
+          <!-- <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr> -->
+        </tbody>
+      </table>
+   </div>
+   	7704567

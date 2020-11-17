@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="conatiner">
+        <h1>
+            Student list
+        </h1>
+            <ul id="list1">
+            </ul>
+    </div>
+</body>
+<script>
+    const students=[
+        {name:'Nikhil',subject:'A.I'},
+        {name:'shubham',subject:'Maths'}
+    ]
+    function enrollstudents(element,callback){
+        setTimeout(function(){
+            students.push(element);
+            console.log('student is enrolled');
+            callback();
+        },3000);
+    }
+    function fetchstudent(){
+        setTimeout(function(){
+            let str='';
+            students.forEach(function(student){
+                str+=`<li>${student.name}</li>`
+            });
+            document.getElementById('list1').innerHTML=str;
+        },1000)
+        }
+        let new1={name:"Sunny", subject:"Python"};
+        fetchstudent()
+        enrollstudents(new1,fetchstudent);
+</script>
+</html>
